@@ -1,5 +1,7 @@
 <h1><%= @post.title %></h1>
-<%= image_tag @post.image.url(:large) %>
+<% if defined?(@latest_post.image) %>
+  <%= image_tag @post.image.url(:large) %>
+<% end %>
 <p><%= @post.text %></p>
 <br />
 <% if @post.user == current_user %>

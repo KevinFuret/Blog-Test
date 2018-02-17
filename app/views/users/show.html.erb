@@ -1,7 +1,23 @@
-<h1>Your profile</h1>
-<p><%= @user.email %></p>
-
-<h3>Your posts</h3>
+<h1 class="text-center mt-4 mb-4">Le blog de <i><%= @user.username %></i></h1>
 <% @posts.each do |post| %>
-  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <h3 class="mb-0">
+          <p class="text-dark"><%= post.title %></p>
+        </h3>
+        <div class="mb-1 text-muted">Nov 12</div>
+        <p class="card-text mb-auto"><%= excerpt(@posts.last.text, 'is', radius: 5) %></p>
+        <a href="/posts/<%= post.id %>">Continue reading</a>
+      </div>
+      <% if defined?(@post.image) %>
+        <%= image_tag post.image.url(:thumb), class: 'card-img-right flex-auto d-none d-md-block' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% if @posts.blank? %>
+  <div class="text-center">
+    <h6>Cet auteur n'a rien publié pour le moment...</h6>
+  </div>
 <% end %>
