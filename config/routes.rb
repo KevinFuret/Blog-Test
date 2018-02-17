@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  get 'users/:username' => 'users#show'
 end
