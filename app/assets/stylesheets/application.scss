@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Montserrat');
+
+h1, h2, h3 {
+  font-family: Montserrat, sans-serif !important;
+}
+
+* {
+  font-family: Catamaran, sans-serif;
+}
+
+.top-bar {
+  a {
+    padding: 0 0.5rem;
+  }
+}
+
+body.page {
+  width: 100%;
+  padding: 0 5%;
+}
