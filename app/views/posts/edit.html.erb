@@ -1,0 +1,10 @@
+<h1><%= t('edit_post') %></h1>
+
+<%= render partial: 'form' %>
+
+<h1><%= t('delete_post') %></h1>
+
+<%= form_tag "/posts/#{@post.id}", method: "delete" do %>
+  <input type="submit" value="<%= t('delete_post') %>" />
+<% end %>
+

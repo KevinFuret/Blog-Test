@@ -1,0 +1,9 @@
+<h1><%= @post.title %></h1>
+<%= image_tag @post.image.url(:large) %>
+<p><%= @post.text %></p>
+<br />
+<% if @post.user == current_user %>
+  <a href="/posts/<%= @post.id %>/edit"><%= t('edit_post') %></a>
+<% end %>
+
+<p><a href="/"><%= t('back_home') %></a></p>
