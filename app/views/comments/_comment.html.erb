@@ -5,7 +5,7 @@
   <%= render 'comments/form' %>
 </div>
 <div class="container liste-commentaire">
-<% if @comments.count > 1 %>
+<% if @comments.count > 0 %>
   <% @comments.each do |comment| %>
     <div class="commentaire border">
     <p><b><%= comment.user.username %></b></p>
