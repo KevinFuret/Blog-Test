@@ -18,7 +18,7 @@
       <a href="/creer" class="btn btn-sm btn-outline-secondary pl-2 pr-2">
         Ajouter un article
       </a>
-      <a href="/users/<%= @user.username %>" class="btn btn-sm btn-outline-secondary pl-2 pr-2">
+      <a href="/users/<%= current_user.username %>" class="btn btn-sm btn-outline-secondary pl-2 pr-2">
         Votre blog
       </a>
     </div>
@@ -26,7 +26,7 @@
       <a class="blog-header-logo text-dark" href="/">Share.it</a>
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
-
+      <p>Bonjour, <%= current_user.username %></p>
       <%= link_to('Logout', destroy_user_session_path, :class => "btn btn-sm btn-outline-secondary pl-2 pr-2", method: :delete)%>
     </div>
   </div>
