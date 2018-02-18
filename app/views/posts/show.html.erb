@@ -7,7 +7,7 @@
   <% if @post.image_file_name.nil? == false %>
     <%= image_tag @post.image.url(:large), class: 'img-fluid' %>
   <% end %>
-  <p class="text"><%= @post.text %></p>
+  <div class="text"><%= @post.text.html_safe %></div>
 </div>
 <% if @post.user == current_user %>
   <a href="/posts/<%= @post.id %>/edit"><%= t('edit_post') %></a>

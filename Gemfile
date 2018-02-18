@@ -36,6 +36,8 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'simple_form'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'paperclip', '~> 5.2', '>= 5.2.1'
+gem 'font-awesome-sass'
+gem 'trix'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
