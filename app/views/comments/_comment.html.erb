@@ -1,0 +1,24 @@
+<div class="container text-center mb-4">
+    <button class="btn btn-primary btn-lg open-add-commentaire">Ajouter un commentaire</button>
+</div>
+<div class="container add-commentaire">
+  <%= render 'comments/form' %>
+</div>
+<div class="container liste-commentaire">
+<% if @comments.count > 1 %>
+  <% @comments.each do |comment| %>
+    <div class="commentaire border">
+    <p><b><%= comment.user.username %></b></p>
+    <p><%= comment.content.html_safe %></p>
+    <% if current_user == comment.user || current_user == @post.user %>
+        <div class="col-md-12 px-0 buttons">
+          <%= link_to "Supprimer le commentaire", [comment.post, comment], method: :delete, class: 'btn btn-outline-warning mr-2' %>
+          <%= link_to "Modifier le commentaire", edit_post_comment_path(comment.post, comment),class: 'btn btn-outline-danger' %>
+        </div>
+    <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p class="text-center">Aucun commentaire n'a été laissé pour l'insant</p>
+<% end %>
+</div>

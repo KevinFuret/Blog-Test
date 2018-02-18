@@ -19,5 +19,10 @@
 //= require_tree .
 
 $( document ).ready(function() {
-
+    $( ".open-add-commentaire" ).click(function() {
+        $( ".add-commentaire" ).slideDown( "slow", function() {
+        });
+        $( ".open-add-commentaire" ).slideUp( "slow", function() {
+        });
+    });
 });

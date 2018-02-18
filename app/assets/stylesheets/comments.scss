@@ -1,0 +1,27 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_comment {
+  textarea {
+
+  }
+}
+
+.add-commentaire {
+  display: none;
+}
+
+.open-add-commentaire {
+  cursor: pointer;
+}
+
+.commentaire {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

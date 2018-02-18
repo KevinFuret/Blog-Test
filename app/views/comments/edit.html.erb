@@ -1,0 +1,4 @@
+<%= form_for([@post, @comment]) do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Valider", class: 'btn btn-primary btn-lg submit-button mt-4' %>
+<% end %>

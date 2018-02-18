@@ -19,7 +19,7 @@
         <a href="/posts/<%= post.id %>/edit" class="mr-3"><button type="button" class="btn btn-outline-warning">Modifier</button></a>
         <%= link_to 'Supprimer', post,  method: :delete, data: { confirm: 'Êtes-vous sur ?' }, class: 'btn btn-outline-danger' %>
       </div>
-    <% end %>
+      <% end %>
     <% if post.image_file_name.nil? == false %>
       <%= image_tag post.image.url(:large), class: 'posts__big-image' %>
     <% end %>

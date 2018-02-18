@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: @post).order('created_at DESC')
   end
 
   def edit
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to "/"
+      redirect_to '/'
     end
   end
 
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
-    redirect_to "/"
+    redirect_to '/'
   end
 
   private

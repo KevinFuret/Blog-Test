@@ -1,9 +1,16 @@
-<div class="single-article">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/users">Auteurs</a></li>
+    <li class="breadcrumb-item"><a href="/users/<%= @post.user.username %>"><%= @post.user.username %></a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @post.title %></li>
+  </ol>
+</nav>
+<div class="single-article mb-5">
   <div class="title">
     <h1><%= @post.title %></h1>
     <p class="author">Par <a href="/users/<%= @post.user.username %>"><%= @post.user.username %></a></p>
   </div>
-
   <% if @post.image_file_name.nil? == false %>
     <%= image_tag @post.image.url(:large), class: 'img-fluid' %>
   <% end %>
@@ -15,12 +22,11 @@
     <input type="submit" value="Supprimer" />
   <% end %>
 <% end %>
-
-<p><a href="/"><%= t('back_home') %></a></p>
 <% if @post.user.posts.count > 1 %>
+  <h3 class="text-center mb-4">D'autres articles de cet auteur</h3>
   <% posts = Post.where("user_id = ? AND id != ?", @post.user, @post.id) %>
   <% posts = posts.last(3) %>
-     <div class="card-deck">
+     <div class="card-deck mb-5">
   <% posts.each do |post| %>
       <div class="card">
         <% if post.image_file_name.nil? == false %>
@@ -35,3 +41,9 @@
       <% end %>
     </div>
 <% end %>
+
+
+<div class="container">
+  <h3 class="text-center mb-4">Commentaires</h3>
+  <%= render 'comments/comment' %>
+</div>
