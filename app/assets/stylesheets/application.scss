@@ -23,6 +23,9 @@
 
 h1, h2, h3, a.btn {
   font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3 {
   margin: 1rem 0;
 }
 
@@ -47,4 +50,26 @@ abbr {
 
 .blog-header {
   background-color: white;
+}
+
+footer {
+  height: 3rem;
+}
+
+.filtre {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  p {
+    margin-bottom: 0;
+  }
+  a:first-child button {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  a:last-child button {
+     border-bottom-left-radius: 0 !important;
+     border-top-left-radius: 0 !important;
+   }
 }

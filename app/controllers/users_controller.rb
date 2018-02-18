@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.find_by(username: params[:username])
+    @users = User.all
   end
 
   def show
     @user = User.find_by(username: params[:username])
-    @posts = current_user.posts.all
+    @posts = @user.posts.all
   end
 end

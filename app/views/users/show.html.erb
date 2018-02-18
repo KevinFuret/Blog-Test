@@ -1,11 +1,24 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/users">Auteurs</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @user.username %></li>
+  </ol>
+</nav>
+<div class="container">
 <h1 class="text-center mt-4 mb-4">Le blog de <i><%= @user.username %></i></h1>
 <% @posts.each do |post| %>
-  <div  class="jumbotron p-3 p-md-5 text-white rounded posts__big">
+  <div  class="jumbotron p-3 p-md-5 text-white rounded posts__big row">
     <div class="col-md-6 px-0 posts__big-text">
-      <h1 class="display-4 font-italic"><%= post.title %></h1>
-      <p class="lead my-3"><%= excerpt(post.text, 'is', radius: 20) %></p>
-      <p class="lead mb-0"><a href="/posts/<%= post.id %>" class="text-white font-weight-bold">Continue reading...</a></p>
+      <h1 class="display-4 font-italic posts__big-title"><%= post.title %></h1>
+      <p class="my-3"><%= excerpt(post.text, 'is', radius: 20) %></p>
+      <p class="mb-0"><a href="/posts/<%= post.id %>" class="text-white font-weight-bold">Continue reading...</a></p>
     </div>
+    <div class="col-md-6 px-0 buttons">
+      <a href="/posts/<%= post.id %>/edit" class="mr-3"><button type="button" class="btn btn-outline-warning">Modifier</button></a>
+      <%= link_to 'Supprimer', post,  method: :delete, data: { confirm: 'Êtes-vous sur ?' }, class: 'btn btn-outline-danger' %>
+    </div>
+
     <% if post.image_file_name.nil? == false %>
       <%= image_tag post.image.url(:large), class: 'posts__big-image' %>
     <% end %>
@@ -16,3 +29,4 @@
     <h6>Cet auteur n'a rien publié pour le moment...</h6>
   </div>
 <% end %>
+</div>

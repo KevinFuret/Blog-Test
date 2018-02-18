@@ -17,3 +17,21 @@
 <% end %>
 
 <p><a href="/"><%= t('back_home') %></a></p>
+<% if @post.user.posts.count > 1 %>
+  <% posts = Post.where("user_id = ? AND id != ?", @post.user, @post.id) %>
+  <% posts = posts.last(3) %>
+     <div class="card-deck">
+  <% posts.each do |post| %>
+      <div class="card">
+        <% if post.image_file_name.nil? == false %>
+          <%= image_tag post.image.url(:small), class: 'img-fluid' %>
+        <% end %>
+        <div class="card-body">
+          <a href="/posts/<%= post.id %>"><h5 class="card-title"><%= post.title %></h5></a>
+          <p class="card-text">T<%= excerpt(post.text, 'is', radius: 20) %></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+<% end %>
