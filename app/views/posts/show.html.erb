@@ -1,5 +1,5 @@
 <h1><%= @post.title %></h1>
-<% if defined?(@latest_post.image) %>
+<% if @post.image_file_name.nil? == false %>
   <%= image_tag @post.image.url(:large) %>
 <% end %>
 <p><%= @post.text %></p>

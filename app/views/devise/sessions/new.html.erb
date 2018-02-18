@@ -1,26 +1,32 @@
-<h2>Log in</h2>
+<div class="text-center signin">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-signin' }) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal"><%= t('sign_up') %></h1>
+    <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control', id: 'inputEmail' }, label: false, placeholder: 'Email' %>
+    <%= f.input :password, required: true, input_html: { class: 'form-control', id: 'inputPassword' }, label: false, placeholder: 'Mot de passe' %>
+    <div class="checkbox mb-3">
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
-  <% end -%>
+    <% if notice.nil? == false %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <% if alert.nil? == false%>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+    <%= f.button :submit , "Se connecter", class: 'btn btn-lg btn-primary btn-block' %>
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
