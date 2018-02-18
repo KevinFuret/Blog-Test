@@ -1,10 +1,6 @@
-<h1><%= t('edit_post') %></h1>
+<div class="modify-post">
+  <h1 class="text-center">Modifier l'article</h1>
+  <%= render partial: 'form' %>
+</div>
 
-<%= render partial: 'form' %>
-
-<h1><%= t('delete_post') %></h1>
-
-<%= form_tag "/posts/#{@post.id}", method: "delete" do %>
-  <input type="submit" value="Supprimer" />
-<% end %>
 

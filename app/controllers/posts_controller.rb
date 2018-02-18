@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     Post.find(params[:id]).update(post_params)
-    redirect_to "/post/#{params[:id]}"
+    redirect_to "/posts/#{params[:id]}"
   end
 
   def destroy

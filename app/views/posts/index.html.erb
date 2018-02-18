@@ -27,7 +27,7 @@
             <p class="card-text mb-auto"><%= excerpt(@posts.last.text, 'is', radius: 20) %></p>
             <a href="/posts/<%= post.id %>">Continue reading</a>
           </div>
-          <% if defined?(post.image) %>
+          <% if post.image_file_name.nil? == false %>
             <%= image_tag post.image.url(:thumb), class: 'card-img-right flex-auto d-none d-md-block' %>
           <% end %>
         </div>

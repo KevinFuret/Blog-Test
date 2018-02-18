@@ -157,3 +157,41 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
   }
 }
+
+.create-post, .modify-post {
+  padding: 0 5%;
+  #post_text {
+    height: 10rem;
+  }
+  #post_image{
+    margin-top: 1rem;
+  }
+  .submit-button {
+    display: block;
+    margin-top: 1rem
+  }
+  .post_title {
+    margin-bottom: 1rem !important;
+  }
+}
+
+.single-article {
+
+  .title {
+    padding: 2rem 10%;
+    .author{
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+  }
+  .text {
+    font-size: 1.5rem;
+    padding: 2rem 10%;
+    line-height: 35px;
+    letter-spacing: 0.2px;
+    color: rgba(0,0,0,.84);
+  }
+  .img-fluid {
+    width: 100%;
+  }
+}

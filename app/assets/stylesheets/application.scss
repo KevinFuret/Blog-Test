@@ -16,14 +16,15 @@
 @import "bootstrap";
 
 
-@import url('https://fonts.googleapis.com/css?family=Catamaran|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Adamina|Open+Sans');
 
-h1, h2, h3 {
-  font-family: Montserrat, sans-serif !important;
+h1, h2, h3, a.btn {
+  font-family: 'Open Sans', sans-serif !important;
+  margin: 1rem 0;
 }
 
 * {
-  font-family: Catamaran, sans-serif;
+  font-family: 'Adamina', serif;
 }
 
 .top-bar {
@@ -35,4 +36,12 @@ h1, h2, h3 {
 body.page {
   width: 100%;
   padding: 0 5%;
+}
+
+abbr {
+  display: none;
+}
+
+.blog-header {
+  background-color: white;
 }

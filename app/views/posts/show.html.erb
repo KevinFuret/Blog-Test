@@ -1,11 +1,19 @@
-<h1><%= @post.title %></h1>
-<% if @post.image_file_name.nil? == false %>
-  <%= image_tag @post.image.url(:large) %>
-<% end %>
-<p><%= @post.text %></p>
-<br />
+<div class="single-article">
+  <div class="title">
+    <h1><%= @post.title %></h1>
+    <p class="author">Par <a href="/users/<%= @post.user.username %>"><%= @post.user.username %></a></p>
+  </div>
+
+  <% if @post.image_file_name.nil? == false %>
+    <%= image_tag @post.image.url(:large), class: 'img-fluid' %>
+  <% end %>
+  <p class="text"><%= @post.text %></p>
+</div>
 <% if @post.user == current_user %>
   <a href="/posts/<%= @post.id %>/edit"><%= t('edit_post') %></a>
+  <%= form_tag "/posts/#{@post.id}", method: "delete" do %>
+    <input type="submit" value="Supprimer" />
+  <% end %>
 <% end %>
 
 <p><a href="/"><%= t('back_home') %></a></p>

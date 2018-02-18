@@ -1,11 +1,12 @@
 <%= simple_form_for @post , html: { multipart: true } do |f| %>
+
   <% if @post.errors.any? %>
-    <div id="errors_explanations">
-      <h2><%= pluralize(@post.error.count, "error")%> prohibited this post to be saved:</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this article from being saved:</h2>
 
       <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
@@ -14,6 +15,6 @@
   <%= f.input :title, label: "Titre" %>
   <%= f.input :text, label: "Contenu" %>
   <%= f.file_field :image, label: "Image" %>
-  <%= f.button :submit %>
+  <%= f.button :submit, "Valider", class: 'btn btn-primary btn-lg submit-button mt-4' %>
 <% end %>
 
