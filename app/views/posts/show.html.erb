@@ -17,8 +17,10 @@
       <%= link_to 'Supprimer', @post,  method: :delete, data: { confirm: 'Êtes-vous sur ?' }, class: 'btn btn-outline-danger' %>
     </div>
   <% end %>
-  <% if @post.image_file_name.nil? == false %>
-    <%= image_tag @post.image.url(:large), class: 'img-fluid mt-4' %>
+  <% if @post.image? %>
+    <%= image_tag @post.image_url(:large), class: 'img-fluid mt-4' %>
+  <% else %>
+    <img src="<%= image_path('missing-large.jpg') %>" alt="">
   <% end %>
   <div class="text"><%= strip_tags(@post.text) %>></div>
 </div>
@@ -30,8 +32,8 @@
      <div class="card-deck mb-5">
   <% posts.each do |post| %>
       <div class="card">
-        <% if post.image_file_name.nil? == false %>
-          <%= image_tag post.image.url(:small), class: 'img-fluid' %>
+        <% if post.image? %>
+          <%= image_tag post.image_url(:small), class: 'img-fluid' %>
         <% else %>
           <img src="<%= image_path('missing-small.png') %>" alt="">
         <% end %>

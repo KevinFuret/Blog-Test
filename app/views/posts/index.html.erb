@@ -14,10 +14,10 @@
       <p class="lead my-3"><%= t('by') %> <a href="/users/<%= @latest_post.user.username %>"><%= @latest_post.user.username %></a></p>
       <p class="lead mb-0"><a href="/posts/<%= @latest_post.id %>" class="text-white font-weight-bold"><%= t('read_more') %></a></p>
     </div>
-    <% if @latest_post.image_file_name.nil? == false%>
-      <%= image_tag @latest_post.image.url(:large), class: 'posts__big-image' %>
+    <% if @latest_post.image? %>
+      <%= image_tag @latest_post.image_url(:large), class: 'posts__big-image' %>
     <% else %>
-      <img src="<%= image_path('missing-large.jpg') %>" alt="" class="posts__big-image">
+      <img src="<%= image_path('missing-large.jpg') %>" alt="">
     <% end %>
   </div>
   <% end %>
@@ -36,8 +36,8 @@
             <p class="card-text mb-auto"><% text = strip_tags(@posts.last.text) %><%= excerpt(text, 'is', radius: 20) %></p>
             <a href="/posts/<%= post.id %>"><%= t('read_more') %></a>
           </div>
-          <% if post.image_file_name.nil? == false %>
-            <%= image_tag post.image.url(:thumb), class: 'card-img-right flex-auto d-none d-md-block' %>
+          <% if post.image? %>
+            <%= image_tag post.image_url(:thumb), class: 'card-img-right flex-auto d-none d-md-block' %>
           <% else %>
             <img src="<%= image_path('missing-thumb.png') %>" alt="">
           <% end %>

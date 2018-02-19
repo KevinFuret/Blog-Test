@@ -35,13 +35,14 @@ gem 'bootstrap', '~> 4.0'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'simple_form'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'paperclip', '~> 5.2', '>= 5.2.1'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'mini_magick'
+gem 'cloudinary'
+gem 'carrierwave-aws', '~> 1.3'
 gem 'font-awesome-sass'
 gem 'trix'
 gem 'i18n'
-gem 'rails_12factor', group: :production
 gem 'rails_serve_static_assets', group: :production
-gem 'aws-sdk', '~> 2.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
