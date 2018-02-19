@@ -41,6 +41,7 @@ gem 'trix'
 gem 'i18n'
 gem 'rails_12factor', group: :production
 gem 'rails_serve_static_assets', group: :production
+gem 'aws-sdk', '~> 2.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
