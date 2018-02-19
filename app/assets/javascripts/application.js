@@ -16,6 +16,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require trix
+//= require localisation
 //= require_tree .
 
 $( document ).ready(function() {
@@ -25,4 +26,10 @@ $( document ).ready(function() {
         $( ".open-add-commentaire" ).slideUp( "slow", function() {
         });
     });
+
+    defaultLocale = "<%= I18n.default_locale %>";
+    locale = "<%= I18n.locale %>";
+
+    console.log(defaultLocale);
+    console.log(locale);
 });
