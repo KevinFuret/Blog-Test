@@ -11,7 +11,7 @@
   <div  class="jumbotron p-3 text-white rounded posts__big row">
     <div class="col-md-6 px-0 posts__big-text">
       <h1 class="display-4 font-italic posts__big-title"><%= post.title %></h1>
-      <p class="my-3"><%= excerpt(post.text, 'is', radius: 20) %></p>
+      <p class="my-3"><% text = strip_tags(post.text) %><%= excerpt(text, 'is', radius: 20) %></p>
       <p class="mb-0"><a href="/posts/<%= post.id %>" class="text-white font-weight-bold"><%= t('read_more') %></a></p>
     </div>
     <% if current_user == post.user %>

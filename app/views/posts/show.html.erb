@@ -20,7 +20,7 @@
   <% if @post.image_file_name.nil? == false %>
     <%= image_tag @post.image.url(:large), class: 'img-fluid mt-4' %>
   <% end %>
-  <div class="text"><%= @post.text.html_safe %></div>
+  <div class="text"><%= strip_tags(@post.text) %>></div>
 </div>
 
 <% if @post.user.posts.count > 1 %>
@@ -37,7 +37,7 @@
         <% end %>
         <div class="card-body">
           <a href="/posts/<%= post.id %>"><h5 class="card-title"><%= post.title %></h5></a>
-          <p class="card-text"><%= excerpt(post.text, 'is', radius: 20) %></p>
+          <p class="card-text"><% text = strip_tags(post.text) %><%= excerpt(text, 'is', radius: 20) %></p>
           <p class="card-text"><small class="text-muted"><%= post.created_at.strftime("%d %B %Y") %></small></p>
         </div>
       </div>
