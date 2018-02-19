@@ -38,6 +38,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'paperclip', '~> 5.2', '>= 5.2.1'
 gem 'font-awesome-sass'
 gem 'trix'
+gem 'i18n'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

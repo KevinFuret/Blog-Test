@@ -1,13 +1,13 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="/users">Auteurs</a></li>
+    <li class="breadcrumb-item"><a href="/"><%= t('home')%></a></li>
+    <li class="breadcrumb-item"><a href="/users"><%= t('authors')%></a></li>
     <li class="breadcrumb-item"><a href="/users/<%= @user.username %>"><%= @user.username %></a></li>
-    <li class="breadcrumb-item active" aria-current="page">Modifier votre article</li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('modify_post')%></li>
   </ol>
 </nav>
 <div class="modify-post">
-  <h1 class="text-center">Modifier l'article</h1>
+  <h1 class="text-center"><%= t('modify_post')%></h1>
   <%= render partial: 'form' %>
 </div>
 

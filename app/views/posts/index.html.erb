@@ -1,7 +1,7 @@
 <div class="filtre container">
   <div class="btn-group" role="group" aria-label="Basic example">
-    <a href="#"><button type="button" class="btn btn-secondary active">Articles</button></a>
-    <a href="/users"><button type="button" class="btn btn-secondary">Auteurs</button></a>
+    <a href="#"><button type="button" class="btn btn-secondary active"><%= t('posts') %></button></a>
+    <a href="/users"><button type="button" class="btn btn-secondary"><%= t('authors') %></button></a>
   </div>
 </div>
 
@@ -11,11 +11,13 @@
     <div class="col-md-12 px-0 posts__big-text">
       <h1 class="display-4 font-italic"><%= @latest_post.title %></h1>
       <p class="lead my-3"><%= excerpt(@latest_post.text, 'is', radius: 20) %></p>
-      <p class="lead my-3">Par <a href="/users/<%= @latest_post.user.username %>"><%= @latest_post.user.username %></a></p>
-      <p class="lead mb-0"><a href="/posts/<%= @latest_post.id %>" class="text-white font-weight-bold">Continue reading...</a></p>
+      <p class="lead my-3"><%= t('by') %> <a href="/users/<%= @latest_post.user.username %>"><%= @latest_post.user.username %></a></p>
+      <p class="lead mb-0"><a href="/posts/<%= @latest_post.id %>" class="text-white font-weight-bold"><%= t('read_more') %></a></p>
     </div>
     <% if @latest_post.image_file_name.nil? == false%>
       <%= image_tag @latest_post.image.url(:large), class: 'posts__big-image' %>
+    <% else %>
+      <img src="<%= image_path('missing-large.jpg') %>" alt="" class="posts__big-image">
     <% end %>
   </div>
   <% end %>
@@ -32,10 +34,12 @@
             </h3>
             <div class="mb-1 text-muted">Nov 12</div>
             <p class="card-text mb-auto"><%= excerpt(@posts.last.text, 'is', radius: 20) %></p>
-            <a href="/posts/<%= post.id %>">Continue reading</a>
+            <a href="/posts/<%= post.id %>"><%= t('read_more') %></a>
           </div>
           <% if post.image_file_name.nil? == false %>
             <%= image_tag post.image.url(:thumb), class: 'card-img-right flex-auto d-none d-md-block' %>
+          <% else %>
+            <img src="<%= image_path('missing-thumb.png') %>" alt="">
           <% end %>
         </div>
       </div>

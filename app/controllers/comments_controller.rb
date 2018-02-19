@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   before_action :find_comment, only: [:destroy, :edit, :update, :comment_owner]
   before_action :comment_owner, only: [:destroy, :edit, :update]
 
+  before_action :authenticate_user!
+
   def create
     @comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
@@ -43,7 +45,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_owner
-    unless current_user.id == @comment.user_id
+    unless current_user == @comment.user
       redirect_to @post
     end
   end

@@ -7,7 +7,7 @@
 <div class="container liste-commentaire">
 <% if @comments.count > 0 %>
   <% @comments.each do |comment| %>
-    <div class="commentaire border">
+    <div class="commentaire border box-shadow">
     <p><b><%= comment.user.username %></b></p>
     <p><%= comment.content.html_safe %></p>
     <% if current_user == comment.user || current_user == @post.user %>

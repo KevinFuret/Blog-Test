@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :user
   before_action :configure_devise_parameters, if: :devise_controller?
+  before_action :set_locale
   layout :layout_by_resource
 
   def configure_devise_parameters
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
     else
       "application"
     end
+  end
+
+  def set_locale
+    #I18n.default_locale = :fr
   end
 end
