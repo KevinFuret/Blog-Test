@@ -39,6 +39,8 @@ gem 'paperclip', '~> 5.2', '>= 5.2.1'
 gem 'font-awesome-sass'
 gem 'trix'
 gem 'i18n'
+gem 'rails_serve_static_assets', group: [:production]
+gem 'rails_stdout_logging', group: [:production]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
