@@ -1,7 +1,7 @@
 <div class="text-center signin">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-signin' }) do |f| %>
 
-    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <img class="mb-4" src="<%= image_path('icon.png') %>" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal"><%= t('sign_up') %></h1>
     <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control', id: 'inputEmail' }, label: false, placeholder: 'Email' %>
     <%= f.input :password, required: true, input_html: { class: 'form-control', id: 'inputPassword' }, label: false, placeholder: 'Mot de passe' %>

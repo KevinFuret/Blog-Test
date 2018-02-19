@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
+  <title><%= content_for?(:title) ? yield(:title) : "Share.it" %></title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -49,7 +49,6 @@
     </button>
   </div>
 <% end %>
-
 <%= yield %>
 <footer></footer>
 </body>
