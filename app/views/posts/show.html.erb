@@ -22,7 +22,7 @@
   <% else %>
     <img src="<%= image_path('missing-large.jpg') %>" alt="">
   <% end %>
-  <div class="text"><%= strip_tags(@post.text) %>></div>
+  <div class="text"><%= strip_tags(@post.text) %></div>
 </div>
 
 <% if @post.user.posts.count > 1 %>

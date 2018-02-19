@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54266e9-2577-4335-833e-4d6beddd486a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/uploaders/image_uploader.rb" afterPath="$PROJECT_DIR$/app/uploaders/image_uploader.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/show.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -130,11 +129,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="image_uploader.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="image_uploader.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="424">
               <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -217,12 +226,12 @@
         <option value="$PROJECT_DIR$/db/migrate/20180217163600_create_posts.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/posts/show.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initializers/fog.rb" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/uploaders/image_uploader.rb" />
+        <option value="$PROJECT_DIR$/app/views/posts/show.html.erb" />
       </list>
     </option>
   </component>
@@ -516,12 +525,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518882841122</updated>
       <workItem from="1518882842328" duration="39146000" />
-      <workItem from="1519038957795" duration="15826000" />
+      <workItem from="1519038957795" duration="15880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54972000" />
+    <option name="totallyTimeSpent" value="55026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -921,14 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -981,6 +982,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
           <folding />
         </state>
       </provider>
