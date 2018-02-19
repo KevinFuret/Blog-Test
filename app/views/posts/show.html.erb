@@ -11,17 +11,18 @@
     <h1><%= @post.title %></h1>
     <p class="author"><%= t('by') %> <a href="/users/<%= @post.user.username %>"><%= @post.user.username %></a></p>
   </div>
+  <% if @post.user == current_user %>
+    <div class="buttons">
+      <a href="/posts/<%= @post.id %>/edit" class="mr-3"><button type="button" class="btn btn-outline-warning"><%= t('edit') %></button></a>
+      <%= link_to 'Supprimer', @post,  method: :delete, data: { confirm: 'Êtes-vous sur ?' }, class: 'btn btn-outline-danger' %>
+    </div>
+  <% end %>
   <% if @post.image_file_name.nil? == false %>
-    <%= image_tag @post.image.url(:large), class: 'img-fluid' %>
+    <%= image_tag @post.image.url(:large), class: 'img-fluid mt-4' %>
   <% end %>
   <div class="text"><%= @post.text.html_safe %></div>
 </div>
-<% if @post.user == current_user %>
-  <a href="/posts/<%= @post.id %>/edit"><%= t('edit_post') %></a>
-  <%= form_tag "/posts/#{@post.id}", method: "delete" do %>
-    <input type="submit" value="Supprimer" />
-  <% end %>
-<% end %>
+
 <% if @post.user.posts.count > 1 %>
   <h3 class="text-center mb-4"><%= t('more_posts_from_this_author') %></h3>
   <% posts = Post.where("user_id = ? AND id != ?", @post.user, @post.id) %>
@@ -43,7 +44,6 @@
       <% end %>
     </div>
 <% end %>
-
 
 <div class="container">
   <h3 class="text-center mb-4"><%= t('comments') %></h3>

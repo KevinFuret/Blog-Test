@@ -38,7 +38,7 @@ fr:
   back_home: "Retour à l'accueil"
   sign_in: "Créer un compte"
   sign_up: "Se connecter"
-  sign_out: "Se déconnecter"
+  log_out: "Se déconnecter"
   modify_comment: "Modifier le commentaire"
   validate: "Valider"
   title: "Titre"
@@ -54,4 +54,5 @@ fr:
   the_blog: "Le blog de"
   edit: "Modifier"
   empty-author: "Cet auteur n'a rien écrit pour le moment"
+  your_blog: "Votre blog"
 

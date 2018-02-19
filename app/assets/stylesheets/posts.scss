@@ -180,7 +180,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
   }
   .submit-button {
-    display: block;
     margin-top: 1rem
   }
   .post_title {
@@ -191,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 .single-article {
 
   .title {
-    padding: 2rem 10%;
+    padding: 2rem 10% 0 10%;
     .author{
       font-style: italic;
       font-size: 1.2rem;
@@ -206,6 +205,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .img-fluid {
     width: 100%;
+  }
+  .buttons {
+    padding: 0 10%;
   }
 }
 
