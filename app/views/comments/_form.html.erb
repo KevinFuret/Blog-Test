@@ -1,4 +1,4 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <%= f.trix_editor :content, label: false, placeholder: 'Votre commentaire' %>
-  <p class="text-center mt-2 mb-4"><%= f.submit "Commenter", class: 'btn btn-primary btn-lg submit-button mt-4' %></p>
+  <%= f.trix_editor :content, label: false, placeholder: 'Ajouter votre commentaire...' %>
+  <p class="text-center mt-2 mb-4"><%= f.submit "Commenter", class: 'btn btn-primary submit-button ' %></p>
 <% end %>
