@@ -21,3 +21,5 @@
 /public/system/posts/*
 # Ignore application configuration
 /config/application.yml
+
+/config/initializers/fog.rb
