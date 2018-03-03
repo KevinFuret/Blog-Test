@@ -22,4 +22,4 @@
 # Ignore application configuration
 /config/application.yml
 
-/config/initializers/fog.rb
+/config/initializers/fog_new.rb
